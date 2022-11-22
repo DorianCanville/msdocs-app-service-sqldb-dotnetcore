@@ -25,7 +25,9 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
     - uses: actions/upload-artifact@v3
       with: 
         name: assets-for-download
-        path: downloads
+        path: ${{env.DOTNET_ROOT}}/myapp
