@@ -29,5 +29,5 @@ jobs:
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
     - uses: actions/upload-artifact@v3
       with: 
-        name: assets-for-download
+        name: ArtifactDotNet
         path: ${{env.DOTNET_ROOT}}/myapp
